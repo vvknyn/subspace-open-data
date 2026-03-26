@@ -255,4 +255,4 @@ UK Companies House, Australia ABN, Singapore ACRA, OpenCorporates, OpenSanctions
 
 **Open data sample:** [github.com/vvknyn/subspace-open-data](https://github.com/vvknyn/subspace-open-data)
 
-**Contact:** hello@thesubspace.io
+**Contact:** dev@thesubspace.io

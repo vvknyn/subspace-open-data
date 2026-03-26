@@ -155,4 +155,4 @@ Full scoring methodology: **[thesubspace.io/research](https://www.thesubspace.io
 
 ---
 
-Built by [Subspace](https://www.thesubspace.io) · Data updated daily · [Contact](mailto:hello@thesubspace.io)
+Built by [Subspace](https://www.thesubspace.io) · Data updated daily · [Contact](mailto:dev@thesubspace.io)
