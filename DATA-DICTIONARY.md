@@ -13,9 +13,9 @@ Every data point is derived from publicly observable network metadata. 33 determ
 | `domain` | string | Company website domain | `stripe.com` |
 | `company_name` | string | Legal or common name | `Stripe` |
 | `health_score` | integer (0-100) | Composite operational health score | `93` |
-| `verdict` | enum | `healthy` / `at_risk` / `critical` | `healthy` |
+| `verdict` | enum | `healthy` / `moderate` / `at_risk` | `healthy` |
 | `confidence` | enum | `high` / `moderate` / `low` | `high` |
-| `hiring_status` | enum | `actively_hiring` / `slow_hiring` / `not_hiring` | `actively_hiring` |
+| `hiring_status` | enum | `healthy` / `slow_hiring` / `not_hiring` | `healthy` |
 | `total_jobs` | integer | Active job listings tracked | `285` |
 | `ats_provider` | string | Applicant tracking system | `greenhouse` |
 | `sector` | string | Industry classification | `cloud_infra` |
@@ -256,3 +256,14 @@ UK Companies House, Australia ABN, Singapore ACRA, OpenCorporates, OpenSanctions
 **Open data sample:** [github.com/vvknyn/subspace-open-data](https://github.com/vvknyn/subspace-open-data)
 
 **Contact:** dev@thesubspace.io
+
+---
+
+## Signal Severity Policy
+
+Only **two** signal types can override the health verdict to "at_risk" regardless of score:
+
+1. **WARN Act Filing** — Government-verified, legally mandated 60-day layoff notice
+2. **Sanctions/Enforcement Match** — Government enforcement action (OFAC, EU sanctions)
+
+All other negative signals (news-based layoffs, restructuring filings, company shutdown reports, mass departures) affect the score through weighted averaging but **do not override** the verdict. This prevents false positives from broadcast RSS fuzzy matching.
